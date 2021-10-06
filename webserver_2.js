@@ -72,7 +72,7 @@ var http = require('http').createServer(function handler(req, res) {
 			a.writeSync(0);
 			b.writeSync(0);
 			c.writeSync(0);
-			d.writeSync(1);;
+			d.writeSync(1);
 			break;
 		case '/9':
 			console.info('handle 9');
@@ -88,7 +88,8 @@ var http = require('http').createServer(function handler(req, res) {
 			d.writeSync(1);
 	}
 
-	res.writeHead(200);
+	res.writeHead(200, {'Content-Type': 'text/plain'});
+	res.write('Hello World!');
 	res.end('The End');
 });
 
